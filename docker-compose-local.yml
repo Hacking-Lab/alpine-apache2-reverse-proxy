@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  alpine-apache2-reverse-proxy-hobo:
+    image: hackinglab/alpine-apache2-reverse-proxy
+    hostname: 'hobo'
+    environment:
+      - "domainname=idocker.REALM_DOMAIN_SUFFIX"
+    env_file:
+      - ./UUID.env
+    volumes:
+      - ./UUID.gn:/goldnugget/UUID.gn
+    ports:
+      - 8000:80
+
