@@ -11,5 +11,5 @@ services:
     volumes:
       - ./UUID.gn:/goldnugget/UUID.gn
     ports:
-      - 8000:80
+      - 80:80
 
