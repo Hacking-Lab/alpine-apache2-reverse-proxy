@@ -1,16 +1,14 @@
-version: '3.4'
+version: '3.6'
 
 services:
-  alpine-apache2-reverse-proxy-hobo:
-    image: REGISTRY_BASE_URL/alpine-apache2-reverse-proxy:latest
-    hostname: 'hobo'
+  alpine-apache2-reverse-proxy:
+    image: hackinglab/alpine-apache2-reverse-proxy:latest
     environment:
-      - "domainname=idocker.REALM_DOMAIN_SUFFIX"
-    labels:
-      - "traefik.port=80"
-      - "traefik.frontend.rule=Host:hobo.REALM_DOMAIN_SUFFIX"
-      - "traefik.protocol=http"
-    env_file:
-      - ./UUID.env
+      - "HL_USER_USERNAME=hacker"
+      - "HL_USER_PASSWORD=compass"
+      - "HL_ROOT_PASSWORD=dQ0edEdD6dWZMJj"
+    ports:
+      - 80:80
+      - 443:443
     volumes:
-      - ./UUID.gn:/goldnugget/UUID.gn
+      - ./config/proxy-html.conf:/etc/apache2/conf-frontend.d/proxy-html.conf

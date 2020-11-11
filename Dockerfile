@@ -9,6 +9,7 @@ RUN apk add --no-cache --update \
     apache2 \
     apache2-utils \
     apache2-proxy \
+    apache2-ssl \
     apache2-proxy-html \
     libxml2 \
     libxml2-dev \
