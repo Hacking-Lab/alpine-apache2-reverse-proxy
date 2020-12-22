@@ -6,7 +6,6 @@ services:
     environment:
       - "HL_USER_USERNAME=hacker"
       - "HL_USER_PASSWORD=compass"
-      - "HL_ROOT_PASSWORD=dQ0edEdD6dWZMJj"
     ports:
       - 80:80
       - 443:443
