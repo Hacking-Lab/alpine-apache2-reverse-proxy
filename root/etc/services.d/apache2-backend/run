@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv sh
+#!/command/with-contenv bash
 
 echo "testing apache2 backend config"
 /usr/sbin/httpd -f /etc/apache2/httpd-backend.conf -t; 

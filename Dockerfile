@@ -1,4 +1,4 @@
-FROM hackinglab/alpine-base:3.2
+FROM hackinglab/alpine-base-hl:3.2
 MAINTAINER Ivan Buetler <ivan.buetler@compass-security.com>
 
 # Add the files
@@ -14,11 +14,11 @@ RUN apk add --no-cache --update \
     libxml2 \
     libxml2-dev \
     curl \
-    php7-apache2 \
-    php7-cli \
-    php7-json \
-    php7-phar \
-    php7-openssl && \
+    php8-apache2 \
+    php8-cli \
+    php8-json \
+    php8-phar \
+    php8-openssl && \
     mkdir -p /run/apache2 && \
 	rm -rf /var/cache/apk/* && \
 	chown -R root:root /opt/www
