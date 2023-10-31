@@ -1,0 +1,8 @@
+#!/command/with-contenv bash
+
+echo "testing apache2 frontend config"
+/usr/sbin/httpd -f /etc/apache2/httpd.conf -t; 
+
+echo "starting apache2 frontend"
+exec /usr/sbin/httpd -f /etc/apache2/httpd-frontend.conf -k start -DFOREGROUND;
+
