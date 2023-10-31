@@ -14,11 +14,11 @@ RUN apk add --no-cache --update \
     libxml2 \
     libxml2-dev \
     curl \
-    php8-apache2 \
-    php8-cli \
-    php8-json \
-    php8-phar \
-    php8-openssl && \
+    php82-apache2 \
+    php82-cli \
+    php82-json \
+    php82-phar \
+    php82-openssl && \
     mkdir -p /run/apache2 && \
 	rm -rf /var/cache/apk/* && \
 	chown -R root:root /opt/www
