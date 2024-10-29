@@ -3,7 +3,7 @@
 This is the template alpine apache2 reverse proxy with a sample php enabled backend service of the Hacking-Lab CTF system
 
 ## Base
-* hackinglab/alpine-base:latest
+* hackinglab/alpine-base-hl:latest
 
 ## Specifications
 * with s6 startup handling
@@ -15,14 +15,8 @@ This is the template alpine apache2 reverse proxy with a sample php enabled back
 * backend service is serving files by apache2 in /opt/backend
 
 ## Build & Test
-1. `bash build.sh`
-2. `docker-compse -f docker-compose.yml up`
-3. browse to http://localhost/
-
-## Testing only (without building)
-1. `docker pull hackinglab/alpine-apache2-reverse-proxy:latest`
-2. `docker-compose -f docker-compose-local.yml up`
-3. browse to http://localhost/
+1. `docker compose -f docker-compose.yml up --build`
+2. browse to http://localhost/
 
 
 
