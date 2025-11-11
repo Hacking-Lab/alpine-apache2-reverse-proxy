@@ -1,7 +1,8 @@
 
 services:
-  alpine-apache2-reverse-proxy-hl:
-    image: hackinglab/alpine-apache2-reverse-proxy-hl:3.2
+  alpine-apache2-reverse-proxy:
+    image: hackinglab/alpine-apache2-reverse-proxy:3.2
+    build: .
     environment:
       - "HL_USER_USERNAME=hacker"
       - "HL_USER_PASSWORD=compass"
