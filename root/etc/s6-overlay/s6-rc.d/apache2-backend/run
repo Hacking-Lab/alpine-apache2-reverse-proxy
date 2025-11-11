@@ -1,4 +1,5 @@
 #!/command/execlineb -P
 with-contenv
 s6-setuidgid root
-httpd -f /etc/apache2/httpd-backend.conf
+httpd -f /etc/apache2/httpd-backend.conf -DFOREGROUND
+
