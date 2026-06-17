@@ -1,6 +1,6 @@
 # Apache Reverse Proxy
 
-This content is being delivered by the `reverse proxy` service itself! 
+This content is delivered by the `reverse proxy` service itself.
 
 ```
             +------------+                +---------------+
@@ -14,11 +14,9 @@ This content is being delivered by the `reverse proxy` service itself!
 
 ## Go to Backend Service
 
-Please connect to the <a href="./backend/"> /backend </a> URL if you want to reach the backend service.
+Open <a href="./backend/">/backend/</a> to reach the backend service.
 
-We want to analyze http requests between the `reverse proxy` and the `backend service`. A quick and dirthy `printheaders.php` running on the `backend service` is giving you an idea of what has been sent by the reverse proxy. 
-
-
+We want to analyze HTTP requests between the `reverse proxy` and the `backend service`. A quick <a href="./backend/printheader.php">printheader.php</a> page running on the `backend service` shows what has been sent by the reverse proxy.
 
 
 

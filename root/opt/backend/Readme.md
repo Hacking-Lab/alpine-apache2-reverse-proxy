@@ -1,5 +1,5 @@
 # Backend Service
-This content is being delivered by the `backend` service. This service is `behind` the reverse proxy (Apache & PHP)
+This content is delivered by the `backend` service behind the Apache reverse proxy.
 
 ```
             +------------+                +---------------+
@@ -11,11 +11,11 @@ This content is being delivered by the `backend` service. This service is `behin
 
 ```
 
-## PrintHeaders
+## Print Headers
 
-If you want to see the http headers, please click on <a href="printheader.php">printheader.php</a>.
+If you want to see the HTTP headers, please click on <a href="printheader.php">printheader.php</a>.
 
 
 ## Go back to the Reverse Proxy
 
-Go back to the reverse proxy by clicking on this <a href="/">Reverse Proxy</a> url. 
+Go back to the reverse proxy by clicking <a href="/">Reverse Proxy</a>.
