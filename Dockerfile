@@ -1,9 +1,6 @@
 FROM hackinglab/alpine-base-hl:latest
 LABEL maintainer="Ivan Buetler <ivan.buetler@hacking-lab.com>"
 
-# Add the files
-ADD root /
-
 RUN apk add --no-cache --update \
     openssl \
     apache2 \
@@ -19,9 +16,11 @@ RUN apk add --no-cache --update \
     php83-json \
     php83-phar \
     php83-openssl && \
-    mkdir -p /run/apache2 && \
-	rm -rf /var/cache/apk/* && \
-	chown -R root:root /opt/www
+    mkdir -p /run/apache2
 
-# Expose the ports for apache2 
-EXPOSE 80
+COPY root /
+
+RUN chown -R root:root /opt/www /opt/backend
+
+# Expose the ports for apache2
+EXPOSE 80 443

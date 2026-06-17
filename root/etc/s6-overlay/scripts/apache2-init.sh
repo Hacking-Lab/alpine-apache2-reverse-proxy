@@ -1,6 +1,10 @@
 #!/command/with-contenv bash
-#
+
+set -euo pipefail
+
 source /etc/hluser
-#sed -i -e "s/\/var\/www\/localhost\/htdocs/\/opt\/www/g" /etc/apache2/httpd.conf
-rm -r /var/www/localhost/htdocs
+
+mkdir -p /run/apache2 /var/www/localhost
+rm -rf /var/www/localhost/htdocs
 ln -s /opt/www /var/www/localhost/htdocs
+chown -R root:root /opt/www /opt/backend

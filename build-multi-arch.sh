@@ -1,9 +1,21 @@
 #!/bin/bash
 
-docker buildx build --platform linux/arm64,linux/amd64 -t hackinglab/alpine-apache2-reverse-proxy:latest . --push
-docker buildx build --platform linux/arm64,linux/amd64 -t hackinglab/alpine-apache2-reverse-proxy:$1  . --push
-docker buildx build --platform linux/arm64,linux/amd64 -t hackinglab/alpine-apache2-reverse-proxy:$1.0 . --push
+set -euo pipefail
 
-docker buildx build --platform linux/arm64,linux/amd64 -t hackinglab/alpine-apache2-reverse-proxy-hl:latest . --push
-docker buildx build --platform linux/arm64,linux/amd64 -t hackinglab/alpine-apache2-reverse-proxy-hl:$1  . --push
-docker buildx build --platform linux/arm64,linux/amd64 -t hackinglab/alpine-apache2-reverse-proxy-hl:$1.0 . --push
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <version>" >&2
+    exit 1
+fi
+
+version=$1
+platforms=linux/arm64,linux/amd64
+images=(
+    hackinglab/alpine-apache2-reverse-proxy
+    hackinglab/alpine-apache2-reverse-proxy-hl
+)
+
+for image in "${images[@]}"; do
+    docker buildx build --platform "$platforms" -t "$image:latest" . --push
+    docker buildx build --platform "$platforms" -t "$image:$version" . --push
+    docker buildx build --platform "$platforms" -t "$image:$version.0" . --push
+done
