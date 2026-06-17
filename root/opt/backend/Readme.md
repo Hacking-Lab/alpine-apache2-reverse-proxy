@@ -13,10 +13,9 @@ This content is being delivered by the `backend` service. This service is `behin
 
 ## PrintHeaders
 
-If you want to see the http headers, please click on the <a href="printheader.php">printheaders.php</a> 
+If you want to see the http headers, please click on <a href="printheader.php">printheader.php</a>.
 
 
 ## Go back to the Reverse Proxy
 
 Go back to the reverse proxy by clicking on this <a href="/">Reverse Proxy</a> url. 
-

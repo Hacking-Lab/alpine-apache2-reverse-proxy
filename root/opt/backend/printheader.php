@@ -150,6 +150,12 @@
 <?php
 $headers = apache_request_headers();
 
+if (!is_array($headers)) {
+    $headers = [];
+}
+
+ksort($headers, SORT_NATURAL | SORT_FLAG_CASE);
+
 foreach ($headers as $header => $value) {
     $safeHeader = htmlspecialchars($header, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
     $safeValue = htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
@@ -157,6 +163,12 @@ foreach ($headers as $header => $value) {
     echo "                <tr>\n";
     echo "                    <td><code>$safeHeader</code></td>\n";
     echo "                    <td><code>$safeValue</code></td>\n";
+    echo "                </tr>\n";
+}
+
+if (count($headers) === 0) {
+    echo "                <tr>\n";
+    echo "                    <td colspan=\"2\">No request headers were received.</td>\n";
     echo "                </tr>\n";
 }
 ?>
